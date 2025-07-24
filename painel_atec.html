@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ATEC Status Panel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: black;
+            color: lime;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+            padding: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+        th, td {
+            border: 1px solid lime;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #111;
+        }
+        .status-inuse {
+            color: lime;
+            font-weight: bold;
+        }
+        .status-idle {
+            color: cyan;
+            font-weight: bold;
+        }
+        .status-stopped {
+            color: red;
+            font-weight: bold;
+        }
+        form {
+            background-color: #111;
+            padding: 20px;
+            margin: 0 10px 30px;
+            border-radius: 10px;
+        }
+        label, select, input {
+            display: block;
+            width: 100%;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        select, input {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: lime;
+            color: black;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>ATEC Status Panel</h1>
+
+<table>
+    <tr>
+        <th>ATEC</th>
+        <th>Status</th>
+        <th>Unit</th>
+        <th>Test Time</th>
+        <th>Cell</th>
+    </tr>
+    <tr><td>ATEC1</td><td class="status-inuse">In Use</td><td>U7345</td><td>12 min</td><td>CEL1</td></tr>
+    <tr><td>ATEC2</td><td class="status-idle">Idle</td><td>-</td><td>-</td><td>CEL1</td></tr>
+    <tr><td>ATEC3</td><td class="status-stopped">Stopped</td><td>U9981</td><td>47 min</td><td>CEL7</td></tr>
+    <tr><td>ATEC4</td><td class="status-inuse">In Use</td><td>U2212</td><td>30 min</td><td>CEL9</td></tr>
+    <tr><td>ATEC5</td><td class="status-inuse">In Use</td><td>U4489</td><td>19 min</td><td>CEL2</td></tr>
+    <tr><td>ATEC6</td><td class="status-idle">Idle</td><td>-</td><td>-</td><td>CEL3</td></tr>
+    <tr><td>ATEC7</td><td class="status-stopped">Stopped</td><td>U5621</td><td>55 min</td><td>CEL10</td></tr>
+    <tr><td>ATEC8</td><td class="status-inuse">In Use</td><td>U3876</td><td>14 min</td><td>CEL8</td></tr>
+    <tr><td>ATEC9</td><td class="status-idle">Idle</td><td>-</td><td>-</td><td>CEL7</td></tr>
+    <tr><td>ATEC10</td><td class="status-inuse">In Use</td><td>U5112</td><td>6 min</td><td>EMERGENCY</td></tr>
+</table>
+
+<form>
+    <h2>Request ATEC Access</h2>
+    <label for="tech">Technician Name</label>
+    <input type="text" id="tech" placeholder="Enter your name">
+
+    <label for="cell">Cell</label>
+    <select id="cell">
+        <option>CEL1</option><option>CEL2</option><option>CEL3</option>
+        <option>CEL7</option><option>CEL8</option><option>CEL9</option>
+        <option>CEL10</option><option>CEL17</option>
+    </select>
+
+    <label for="unit">Unit ID</label>
+    <input type="text" id="unit" placeholder="Enter unit number">
+
+    <label for="reason">Reason for Request</label>
+    <select id="reason">
+        <option>Initial Test</option>
+        <option>Final Test</option>
+        <option>TS (Troubleshooting)</option>
+        <option>Remaining TAT ≤ 24h</option>
+        <option>VIP Unit / Field Return</option>
+        <option>Rework</option>
+    </select>
+
+    <button type="submit">Submit Request</button>
+</form>
+
+</body>
+</html>
